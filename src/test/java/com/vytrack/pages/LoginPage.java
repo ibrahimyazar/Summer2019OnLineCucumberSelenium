@@ -13,6 +13,7 @@ public class LoginPage extends BasePage {
 //we have to create corresponded page class
 //for each page of application
 //login page = login page class
+    // class
 //every page class will store webelements and methods related to that page
 
     @FindBy(id = "prependedInput") //this line will initialize web element
