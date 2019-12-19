@@ -27,6 +27,7 @@ public class BrowserUtils {
      * Waits for element to be not stale
      * implicit wait
      * @param element
+     dev 2 git
      */
     public static void waitForStaleElement(WebElement element) {
         int y = 0;
