@@ -29,6 +29,7 @@ public class BrowserUtils {
      * @param element
      dev 2 git from master branch
      second dev 2
+     third from master
      */
     public static void waitForStaleElement(WebElement element) {
         int y = 0;
