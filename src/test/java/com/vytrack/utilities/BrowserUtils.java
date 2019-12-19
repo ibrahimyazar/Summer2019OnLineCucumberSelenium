@@ -29,11 +29,9 @@ public class BrowserUtils {
      * @param element
      dev 2 git from master branch
      second dev 2
- >>>>> dev2
+    dev2 from intellJ
      third attenmd dev2
-
-     third from master
->>>   master
+     master
      */
     public static void waitForStaleElement(WebElement element) {
         int y = 0;
