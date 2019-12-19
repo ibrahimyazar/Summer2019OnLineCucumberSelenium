@@ -114,11 +114,12 @@ public class BasePage {
         waitUntilLoaderMaskDisappear();
         BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
+    }
         /*
         String pageSubTitle = pageSubTitle.getText();
         return pageSubTitle;
         */
-    }
+
 
     public String getUserName() {
         waitUntilLoaderMaskDisappear();
