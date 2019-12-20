@@ -141,7 +141,7 @@ public class BrowserUtils {
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
-            element.click();   // click again
+           // element.click();   // click again
         }
     }
 

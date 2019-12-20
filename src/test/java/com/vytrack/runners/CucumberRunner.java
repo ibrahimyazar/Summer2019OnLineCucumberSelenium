@@ -9,9 +9,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",        //   /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/resources/features
             glue = "com/vytrack/step_definitions",      //  /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/java/com/vytrack/step_definitions
-            dryRun = true,
-            tags = "",
-            plugin = {"html:target/default-cucumber-reports"}   // create the report
+            dryRun = false,
+            tags = "@smoke_test",
+            plugin = {"html:target/default-cucumber-reports",
+            "json:target/cucumber.json"}   // create the report
 )
 public class CucumberRunner {
 

@@ -4,9 +4,7 @@ import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import org.junit.Assert;
 
 public class LoginStepDefinitions {
@@ -24,10 +22,10 @@ public class LoginStepDefinitions {
 //        // Write code here that turns the phrase above into concrete actions
 //        throw new cucumber.api.PendingException();
 //    }
-    @When("user navigates to {string} then to {string}")
-    public void user_navigates_to_then_to(String string, String string2) {
-
-    }
+//    @When("user navigates to {string} then to {string}")
+//    public void user_navigates_to_then_to(String string, String string2) {
+//
+//    }
 
 
     @Then("user logs in as store manager")
@@ -48,6 +46,9 @@ public class LoginStepDefinitions {
 //        loginPage.waitUntilLoaderMaskDisappear();
 //        BrowserUtils.wait(10);
 //         Assert.assertEquals(string, loginPage.getPageSubTitle());
+        loginPage.waitUntilLoaderMaskDisappear();
+        BrowserUtils.wait(2);
+        Assert.assertEquals(string, loginPage.getPageSubTitle());
         System.out.println("Verifying page subtitle: " + string);
 
     }

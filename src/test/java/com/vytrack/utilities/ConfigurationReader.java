@@ -23,6 +23,7 @@ public class ConfigurationReader {
             configFile = new Properties();
             //load configuration.properties file
             configFile.load(fileInputStream);
+            fileInputStream.close();
         } catch (IOException e) {
             System.out.println("Failed to load properties file!");
             e.printStackTrace();
