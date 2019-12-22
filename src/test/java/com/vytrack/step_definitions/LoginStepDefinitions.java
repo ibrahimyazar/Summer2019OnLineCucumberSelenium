@@ -7,6 +7,8 @@ import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
+import java.util.Map;
+
 public class LoginStepDefinitions {
     // Write code here that turns the phrase above into concrete actions
     LoginPage loginPage = new LoginPage();  // We created loginpage objec
@@ -33,9 +35,9 @@ public class LoginStepDefinitions {
         System.out.println("Login as store manager");
         // we read username and password from properties file
         // usually in java we use Camel case for namings variables
-        String username = ConfigurationReader.getProperty("user_name");
+        String userName = ConfigurationReader.getProperty("user_name");
         String password = ConfigurationReader.getProperty("password");
-        loginPage.login(username, password);
+        loginPage.login(userName, password);
     }
 
     //any string in "word" will become a parameter for step definition method
@@ -56,11 +58,20 @@ public class LoginStepDefinitions {
     @Then("user logs in as driver")
     public void user_logs_in_as_driver() {
         System.out.println("Login as driver");
+        // we read username and password from properties file
+        // usually in java we use Camel case for namings variables
+        String userName = ConfigurationReader.getProperty("user_name_driver");
+        String password = ConfigurationReader.getProperty("password_driver");
+        loginPage.login(userName, password);
     }
 
     @Then("user logs in as sales manager")
     public void user_logs_in_as_sales_manager() {
         System.out.println("Login as sales manager");
+
+        String userName = ConfigurationReader.getProperty("user_name_sales_manager");
+        String password = ConfigurationReader.getProperty("password_sales_manager");
+        loginPage.login(userName, password);
     }
 
     // Then user enters "storemanager85" username and "wrong" password
@@ -75,6 +86,17 @@ public class LoginStepDefinitions {
         System.out.println("verified that warning message is displayed: " + string);  // string = Invalid user name or password.
     }
 
+//    Then user logs in as driver with following credentials
+//      | username | user160     |
+//      | password | UserUser123 |
+    @Then("user logs in as driver with following credentials")  // dec 12 son dakikalar
+                                                                // key        value
+    public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
+
+        System.out.println(dataTable);
+        loginPage.login(dataTable.get("username"), dataTable.get("password"));
+
+    }
 
 
 }
