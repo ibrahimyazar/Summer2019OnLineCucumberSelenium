@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
     @FindBy(css = "[class='alert alert-error']")
     public WebElement warningMessage;
 
-    public LoginPage() {  // this is consrtructor
+    public LoginPage() {  // this is constructor
         //it's mandatory if you want to use @FindBy annotation
         //this means LoginPage class
         //Driver.get() return webdriver object

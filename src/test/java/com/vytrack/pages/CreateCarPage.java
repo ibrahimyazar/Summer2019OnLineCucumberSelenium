@@ -34,6 +34,12 @@ public class CreateCarPage extends BasePage{
     @FindBy(name = "custom_entity_type[Color]")
     public WebElement colorElement;
 
+    @FindBy(css = "[id = 'custom_entity_type_LastOdometer-uid-5e0037b096ead']")
+    public WebElement lastOdometerElement;
+
+    @FindBy(css = "[id = 'custom_entity_type_SeatsNumber-uid-5e0037b0973e3']")
+    public WebElement seatNumberElement;
+
 
     /**
      * This method stands for selecting tags
