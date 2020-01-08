@@ -6,8 +6,11 @@ import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.junit.rules.Timeout;
 
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class LoginStepDefinitions {
     // Write code here that turns the phrase above into concrete actions
@@ -35,7 +38,7 @@ public class LoginStepDefinitions {
         System.out.println("Login as store manager");
         // we read username and password from properties file
         // usually in java we use Camel case for namings variables
-        String userName = ConfigurationReader.getProperty("user_name");
+        String userName = ConfigurationReader.getProperty("username");
         String password = ConfigurationReader.getProperty("password");
         loginPage.login(userName, password);
     }
@@ -45,6 +48,7 @@ public class LoginStepDefinitions {
     @Then("user verifies that {string} page subtitle is displayed")
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
 
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 //        loginPage.waitUntilLoaderMaskDisappear();
 //        BrowserUtils.wait(10);
 //         Assert.assertEquals(string, loginPage.getPageSubTitle());
@@ -60,7 +64,7 @@ public class LoginStepDefinitions {
         System.out.println("Login as driver");
         // we read username and password from properties file
         // usually in java we use Camel case for namings variables
-        String userName = ConfigurationReader.getProperty("user_name_driver");
+        String userName = ConfigurationReader.getProperty("username_driver");
         String password = ConfigurationReader.getProperty("password_driver");
         loginPage.login(userName, password);
     }
@@ -69,8 +73,8 @@ public class LoginStepDefinitions {
     public void user_logs_in_as_sales_manager() {
         System.out.println("Login as sales manager");
 
-        String userName = ConfigurationReader.getProperty("user_name_sales_manager");
-        String password = ConfigurationReader.getProperty("password_sales_manager");
+        String userName = ConfigurationReader.getProperty("username_sales_manager");
+        String password = ConfigurationReader.getProperty("passwordsales_manager");
         loginPage.login(userName, password);
     }
 
@@ -78,6 +82,7 @@ public class LoginStepDefinitions {
     @Then("user enters {string} username and {string} password")
     public void user_enters_username_and_password(String string, String string2) {
         System.out.println("Login with " + string + " user name " + string2 + " password." );
+        loginPage.login(string, string2);
     }
 
     //user verifies that "Invalid user name or password." message is displayed
@@ -91,11 +96,23 @@ public class LoginStepDefinitions {
 //      | password | UserUser123 |
     @Then("user logs in as driver with following credentials")  // dec 12 son dakikalar
                                                                 // key        value
-    public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
-
+   // public void user_logs_in_as_driver_with_following_credentials(Map<String, String> dataTable) {
+    public void user_logs_in_as_driver_with_following_credentials(List<Map<String, String>> dataTable) {
         System.out.println(dataTable);
-        loginPage.login(dataTable.get("username"), dataTable.get("password"));
+        loginPage.login("username", "password");
 
+    }
+
+    @Then("user logs in as {string}")
+    public void user_logs_in_as(String role) {
+        loginPage.login(role);
+    }
+
+    @Then("the page title should be {string}")
+    public void the_page_title_should_be(String string) {
+        BrowserUtils.waitForPageTitle(string);
+        //Assert.assertEquals(string, Driver.get().getTitle());
+        Assert.assertEquals("Title is incorrect", string, Driver.get().getTitle());
     }
 
 

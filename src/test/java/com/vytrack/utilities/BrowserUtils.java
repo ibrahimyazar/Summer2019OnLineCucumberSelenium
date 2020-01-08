@@ -45,7 +45,7 @@ public class BrowserUtils {
             } catch (StaleElementReferenceException st) {
                 y++;
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
