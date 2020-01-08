@@ -13,12 +13,12 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",      // where is tjhe features files   //   /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/resources/features
             glue = "com/vytrack/step_definitions",    // where is the step definitions  //  /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/java/com/vytrack/step_definitions
             dryRun = false,
-            tags = "  @Column_names",
+            tags = " @smoke_test",
             plugin = {"html:target/default-cucumber-reports",
-            "json:target/cucumber.json"}   // create the report
+            "json:target/cucumber.json",  // create the report
+           // "rerun:target/rerun.txt"
+        }
 )
 public class CucumberRunner {
-
-
 
 }

@@ -1,5 +1,6 @@
 package com.vytrack.pages;
 
+import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -48,4 +49,23 @@ public class LoginPage extends BasePage {
         passwordInput.sendKeys(password, Keys.ENTER);
     }
 
+    public void login(String role) {
+        String userName = "";
+        String password = ConfigurationReader.getProperty("password");
+
+        switch (role) {
+            case "driver":
+                userName = ConfigurationReader.getProperty("username_driver");
+                break;
+            case "store manager":
+                userName = ConfigurationReader.getProperty("username_store_manager");
+                break;
+            case "sales manager":
+                userName = ConfigurationReader.getProperty("username_sales_manager");
+                break;
+            default:
+                throw new RuntimeException("Invalid role!");
+        }
+        login(userName, password);
+    }
 }

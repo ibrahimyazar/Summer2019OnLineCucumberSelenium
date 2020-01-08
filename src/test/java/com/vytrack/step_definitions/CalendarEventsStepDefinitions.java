@@ -28,7 +28,7 @@ public class CalendarEventsStepDefinitions {
         // we need to
         // cucumber automaticly finded the step definitioans
        calendarEventsPage.waitUntilLoaderMaskDisappear();
-        calendarEventsPage.getCulumnNames();  // thgis is aur actual result
+        calendarEventsPage.getCulumnNames();  // thgis is aur actual result from calendareventpage
         Assert.assertEquals(calendarEventsPage.getCulumnNames(), dataTable);
 
 
