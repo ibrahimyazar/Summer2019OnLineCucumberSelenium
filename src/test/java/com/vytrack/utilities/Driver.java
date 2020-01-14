@@ -14,7 +14,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
 
-    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();  // jan 3 20220
 
     private Driver() {
 
