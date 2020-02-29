@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",      // where is tjhe features files   //   /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/resources/features
             glue = "com/vytrack/step_definitions",    // where is the step definitions  //  /Users/banu/IdeaProjects/Summer2019OnLineCucumberSelenium/src/test/java/com/vytrack/step_definitions
             dryRun = false,
-            tags = " @check_all_Boxes",
+            tags = " @store_manager",
             plugin = {"html:target/default-cucumber-reports",
             "json:target/cucumber.json",  // create the report
            // "rerun:target/rerun.txt"

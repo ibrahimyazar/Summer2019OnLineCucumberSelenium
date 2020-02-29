@@ -24,6 +24,11 @@ public class CalendarEventsStepDefinitions {
     @Then("user verifies that column names are displayed")
     public void user_verifies_that_column_names_are_displayed(List<String>  dataTable) {
 
+//        try {
+//            Thread.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         System.out.println(dataTable);
         // we need to
         // cucumber automaticly finded the step definitioans
