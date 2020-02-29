@@ -74,7 +74,7 @@ public class LoginStepDefinitions {
         System.out.println("Login as sales manager");
 
         String userName = ConfigurationReader.getProperty("username_sales_manager");
-        String password = ConfigurationReader.getProperty("passwordsales_manager");
+        String password = ConfigurationReader.getProperty("password_sales_manager");
         loginPage.login(userName, password);
     }
 
