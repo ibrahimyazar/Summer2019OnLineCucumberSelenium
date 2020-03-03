@@ -14,6 +14,8 @@ public class CreateCarPage extends BasePage{
 
     @FindBy(name = "custom_entity_type[Driver]")
     public WebElement driverElement;
+    @FindBy(name = "custom_entity_type[Driver]")
+    public WebElement driverElement2;
 
     @FindBy(name = "custom_entity_type[Location]")
     public WebElement locationElement;
