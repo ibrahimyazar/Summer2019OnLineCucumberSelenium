@@ -117,7 +117,7 @@
                             <threadCountMethods>5</threadCountMethods>
 
                             <includes>
-                                <include>**/RegressionRunner.java</include>
+                                <include>**/CucumberRunner.java</include>
                             </includes>
                             <testFailureIgnore>true</testFailureIgnore>
                         </configuration>
